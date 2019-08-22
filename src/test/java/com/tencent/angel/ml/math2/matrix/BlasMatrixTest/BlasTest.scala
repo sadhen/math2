@@ -20,9 +20,9 @@ package com.tencent.angel.ml.math2.matrix.BlasMatrixTest
 import com.tencent.angel.ml.math2.MFactory
 import com.tencent.angel.ml.math2.matrix.{BlasDoubleMatrix, BlasFloatMatrix}
 import com.tencent.angel.ml.math2.ufuncs.Ufuncs
-import org.scalatest.FunSuite
+import org.scalatest.{FunSuite, Matchers}
 
-class BalsTest extends FunSuite {
+class BlasTest extends FunSuite with Matchers {
   val data1 = Array[Double](
     1.3, 2.7, 3.2, 5.1,
     3.0, 8.0, 9.5, 4.7,
@@ -58,7 +58,7 @@ class BalsTest extends FunSuite {
         }
 
         println(f"$tmp%.2f, ${res.get(rId, cId)}%.2f, ${tmp == res.get(rId, cId)}")
-        assert(tmp == res.get(rId, cId))
+        assert(tmp === res.get(rId, cId) +- 0.001D)
       }
     }
 
@@ -78,7 +78,7 @@ class BalsTest extends FunSuite {
         }
 
         println(f"$tmp%.2f, ${res.get(rId, cId)}%.2f, ${tmp == res.get(rId, cId)}")
-        assert(tmp == res.get(rId, cId))
+        assert(tmp === res.get(rId, cId) +- 0.001D)
       }
     }
   }
@@ -96,7 +96,7 @@ class BalsTest extends FunSuite {
         }
 
         println(f"$tmp%.2f, ${res.get(rId, cId)}%.2f, ${tmp == res.get(rId, cId)}")
-        assert(tmp == res.get(rId, cId))
+        assert(tmp === res.get(rId, cId) +- 0.001D)
       }
     }
   }
@@ -114,7 +114,7 @@ class BalsTest extends FunSuite {
         }
 
         println(f"$tmp%.2f, ${res.get(rId, cId)}%.2f, ${tmp == res.get(rId, cId)}")
-        assert(tmp == res.get(rId, cId))
+        assert(tmp === res.get(rId, cId) +- 0.001D)
       }
     }
   }
@@ -132,7 +132,7 @@ class BalsTest extends FunSuite {
         }
 
         println(f"$tmp%.2f, ${res.get(rId, cId)}%.2f, ${tmp == res.get(rId, cId)}")
-        assert(tmp == res.get(rId, cId))
+        assert(tmp === res.get(rId, cId) +- 0.001F)
       }
     }
 
@@ -152,7 +152,7 @@ class BalsTest extends FunSuite {
         }
 
         println(f"$tmp%.2f, ${res.get(rId, cId)}%.2f, ${tmp == res.get(rId, cId)}")
-        assert(tmp == res.get(rId, cId))
+        assert(tmp === res.get(rId, cId) +- 0.001F)
       }
     }
   }
@@ -170,7 +170,7 @@ class BalsTest extends FunSuite {
         }
 
         println(f"$tmp%.2f, ${res.get(rId, cId)}%.2f, ${tmp == res.get(rId, cId)}")
-        assert(tmp == res.get(rId, cId))
+        assert(tmp === res.get(rId, cId) +- 0.001F)
       }
     }
   }
@@ -188,7 +188,7 @@ class BalsTest extends FunSuite {
         }
 
         println(f"$tmp%.2f, ${res.get(rId, cId)}%.2f, ${tmp == res.get(rId, cId)}")
-        assert(tmp == res.get(rId, cId))
+        assert(tmp === res.get(rId, cId) +- 0.001F)
       }
     }
   }
