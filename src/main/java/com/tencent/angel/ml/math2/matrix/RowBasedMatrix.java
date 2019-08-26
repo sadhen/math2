@@ -51,13 +51,13 @@ public abstract class RowBasedMatrix<Vec extends Vector> extends Matrix {
     this.cols = cols;
   }
 
-  public abstract RowBasedMatrix calulate(int rowId, Vector other, Binary op);
+  public abstract RowBasedMatrix calculate(int rowId, Vector other, Binary op);
 
-  public abstract RowBasedMatrix calulate(Vector other, Binary op);
+  public abstract RowBasedMatrix calculate(Vector other, Binary op);
 
-  public abstract RowBasedMatrix calulate(Matrix other, Binary op);
+  public abstract RowBasedMatrix calculate(Matrix other, Binary op);
 
-  public abstract RowBasedMatrix calulate(Unary op);
+  public abstract RowBasedMatrix calculate(Unary op);
 
   @Override
   public Vec getRow(int idx) {
@@ -149,192 +149,192 @@ public abstract class RowBasedMatrix<Vec extends Vector> extends Matrix {
 
   @Override
   public Matrix iadd(int rowId, Vector other) {
-    return calulate(rowId, other, new Add(true));
+    return calculate(rowId, other, new Add(true));
   }
 
   @Override
   public Matrix add(int rowId, Vector other) {
-    return calulate(rowId, other, new Add(false));
+    return calculate(rowId, other, new Add(false));
   }
 
   @Override
   public Matrix isub(int rowId, Vector other) {
-    return calulate(rowId, other, new Sub(true));
+    return calculate(rowId, other, new Sub(true));
   }
 
   @Override
   public Matrix sub(int rowId, Vector other) {
-    return calulate(rowId, other, new Sub(false));
+    return calculate(rowId, other, new Sub(false));
   }
 
   @Override
   public Matrix imul(int rowId, Vector other) {
-    return calulate(rowId, other, new Mul(true));
+    return calculate(rowId, other, new Mul(true));
   }
 
   @Override
   public Matrix mul(int rowId, Vector other) {
-    return calulate(rowId, other, new Mul(false));
+    return calculate(rowId, other, new Mul(false));
   }
 
   @Override
   public Matrix idiv(int rowId, Vector other) {
-    return calulate(rowId, other, new Div(true));
+    return calculate(rowId, other, new Div(true));
   }
 
   @Override
   public Matrix div(int rowId, Vector other) {
-    return calulate(rowId, other, new Div(false));
+    return calculate(rowId, other, new Div(false));
   }
 
   @Override
   public Matrix iaxpy(int rowId, Vector other, double aplha) {
-    return calulate(rowId, other, new Axpy(true, aplha));
+    return calculate(rowId, other, new Axpy(true, aplha));
   }
 
   @Override
   public Matrix axpy(int rowId, Vector other, double aplha) {
-    return calulate(rowId, other, new Axpy(false, aplha));
+    return calculate(rowId, other, new Axpy(false, aplha));
   }
 
   @Override
   public Matrix iadd(Vector other) {
-    return calulate(other, new Add(true));
+    return calculate(other, new Add(true));
   }
 
   @Override
   public Matrix add(Vector other) {
-    return calulate(other, new Add(false));
+    return calculate(other, new Add(false));
   }
 
   @Override
   public Matrix isub(Vector other) {
-    return calulate(other, new Sub(true));
+    return calculate(other, new Sub(true));
   }
 
   @Override
   public Matrix sub(Vector other) {
-    return calulate(other, new Sub(false));
+    return calculate(other, new Sub(false));
   }
 
   @Override
   public Matrix imul(Vector other) {
-    return calulate(other, new Mul(true));
+    return calculate(other, new Mul(true));
   }
 
   @Override
   public Matrix mul(Vector other) {
-    return calulate(other, new Mul(false));
+    return calculate(other, new Mul(false));
   }
 
   @Override
   public Matrix idiv(Vector other) {
-    return calulate(other, new Div(true));
+    return calculate(other, new Div(true));
   }
 
   @Override
   public Matrix div(Vector other) {
-    return calulate(other, new Div(false));
+    return calculate(other, new Div(false));
   }
 
   @Override
   public Matrix iaxpy(Vector other, double aplha) {
-    return calulate(other, new Axpy(true, aplha));
+    return calculate(other, new Axpy(true, aplha));
   }
 
   @Override
   public Matrix axpy(Vector other, double aplha) {
-    return calulate(other, new Axpy(false, aplha));
+    return calculate(other, new Axpy(false, aplha));
   }
 
   @Override
   public Matrix iadd(Matrix other) {
-    return calulate(other, new Add(true));
+    return calculate(other, new Add(true));
   }
 
   @Override
   public Matrix add(Matrix other) {
-    return calulate(other, new Add(false));
+    return calculate(other, new Add(false));
   }
 
   @Override
   public Matrix isub(Matrix other) {
-    return calulate(other, new Sub(true));
+    return calculate(other, new Sub(true));
   }
 
   @Override
   public Matrix sub(Matrix other) {
-    return calulate(other, new Sub(false));
+    return calculate(other, new Sub(false));
   }
 
   @Override
   public Matrix imul(Matrix other) {
-    return calulate(other, new Mul(true));
+    return calculate(other, new Mul(true));
   }
 
   @Override
   public Matrix mul(Matrix other) {
-    return calulate(other, new Mul(false));
+    return calculate(other, new Mul(false));
   }
 
   @Override
   public Matrix idiv(Matrix other) {
-    return calulate(other, new Div(true));
+    return calculate(other, new Div(true));
   }
 
   @Override
   public Matrix div(Matrix other) {
-    return calulate(other, new Div(false));
+    return calculate(other, new Div(false));
   }
 
   @Override
   public Matrix iaxpy(Matrix other, double aplha) {
-    return calulate(other, new Axpy(true, aplha));
+    return calculate(other, new Axpy(true, aplha));
   }
 
   @Override
   public Matrix axpy(Matrix other, double aplha) {
-    return calulate(other, new Axpy(false, aplha));
+    return calculate(other, new Axpy(false, aplha));
   }
 
   @Override
   public Matrix iadd(double x) {
-    return calulate(new SAdd(true, x));
+    return calculate(new SAdd(true, x));
   }
 
   @Override
   public Matrix add(double x) {
-    return calulate(new SAdd(false, x));
+    return calculate(new SAdd(false, x));
   }
 
   @Override
   public Matrix isub(double x) {
-    return calulate(new SSub(true, x));
+    return calculate(new SSub(true, x));
   }
 
   @Override
   public Matrix sub(double x) {
-    return calulate(new SSub(false, x));
+    return calculate(new SSub(false, x));
   }
 
   @Override
   public Matrix imul(double x) {
-    return calulate(new SMul(true, x));
+    return calculate(new SMul(true, x));
   }
 
   @Override
   public Matrix mul(double x) {
-    return calulate(new SMul(false, x));
+    return calculate(new SMul(false, x));
   }
 
   @Override
   public Matrix idiv(double x) {
-    return calulate(new SDiv(true, x));
+    return calculate(new SDiv(true, x));
   }
 
   @Override
   public Matrix div(double x) {
-    return calulate(new SDiv(false, x));
+    return calculate(new SDiv(false, x));
   }
 
   @Override

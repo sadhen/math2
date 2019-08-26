@@ -33,7 +33,7 @@ public class UnaryMatrixExecutor {
     } else if (mat instanceof BlasFloatMatrix) {
       return apply((BlasFloatMatrix) mat, op);
     } else if (mat instanceof RowBasedMatrix) {
-      return ((RowBasedMatrix) mat).calulate(op);
+      return ((RowBasedMatrix) mat).calculate(op);
     } else {
       throw new MathException("The operation is not supported!");
     }

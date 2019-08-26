@@ -64,7 +64,7 @@ public class BinaryMatrixExecutor {
       return apply((BlasFloatMatrix) mat, (IntDummyVector) v, idx, onCol, op);
     } else if (mat instanceof RowBasedMatrix) {
       assert !onCol;
-      return ((RowBasedMatrix) mat).calulate(idx, v, op);
+      return ((RowBasedMatrix) mat).calculate(idx, v, op);
     } else {
       throw new MathException("The operation is not supported!");
     }
@@ -1661,7 +1661,7 @@ public class BinaryMatrixExecutor {
       return apply((BlasFloatMatrix) mat, (IntDummyVector) v, onCol, op);
     } else if (mat instanceof RowBasedMatrix) {
       assert !onCol;
-      return ((RowBasedMatrix) mat).calulate(v, op);
+      return ((RowBasedMatrix) mat).calculate(v, op);
     } else {
       throw new MathException("The operation is not supported!");
     }
@@ -3611,7 +3611,7 @@ public class BinaryMatrixExecutor {
     } else if (mat1 instanceof BlasFloatMatrix && mat2 instanceof BlasFloatMatrix) {
       return apply((BlasFloatMatrix) mat1, trans1, (BlasFloatMatrix) mat2, trans2, op);
     } else if (mat1 instanceof RowBasedMatrix) {
-      return ((RowBasedMatrix) mat1).calulate(mat2, op);
+      return ((RowBasedMatrix) mat1).calculate(mat2, op);
     } else {
       throw new MathException("The operation is not supported!");
     }

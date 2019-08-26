@@ -107,7 +107,7 @@ public class RBCompLongFloatMatrix extends RowBasedMatrix<CompLongFloatVector> {
   }
 
   @Override
-  public RowBasedMatrix calulate(int rowId, Vector other, Binary op) {
+  public RowBasedMatrix calculate(int rowId, Vector other, Binary op) {
     assert other != null;
     RBCompLongFloatMatrix res;
     if (op.isInplace()) {
@@ -136,7 +136,7 @@ public class RBCompLongFloatMatrix extends RowBasedMatrix<CompLongFloatVector> {
   }
 
   @Override
-  public RowBasedMatrix calulate(Vector other, Binary op) {
+  public RowBasedMatrix calculate(Vector other, Binary op) {
     assert other != null;
     RBCompLongFloatMatrix res;
     if (op.isInplace()) {
@@ -163,7 +163,7 @@ public class RBCompLongFloatMatrix extends RowBasedMatrix<CompLongFloatVector> {
   }
 
   @Override
-  public RowBasedMatrix calulate(Matrix other, Binary op) {
+  public RowBasedMatrix calculate(Matrix other, Binary op) {
     assert other instanceof RowBasedMatrix;
 
     if (op.isInplace()) {
@@ -195,7 +195,7 @@ public class RBCompLongFloatMatrix extends RowBasedMatrix<CompLongFloatVector> {
   }
 
   @Override
-  public RowBasedMatrix calulate(Unary op) {
+  public RowBasedMatrix calculate(Unary op) {
     if (op.isInplace()) {
       for (Vector vec : rows) {
         UnaryExecutor.apply(vec, op);
